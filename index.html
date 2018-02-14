@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Betaflight 3.3 BiQuad + FIR2 Kalman filter equivalent calculator</title>
+  <meta name="description" content="Betaflight 3.3 BiQuad + FIR2 Kalman filter equivalent calculator">
+  <meta name="author" content="QuadMeUp.com">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <h1>Betaflight 3.3 Kalman calculator</h1>
+    <h2>BiQuad+FIR2 Kalman filter equivalnet</h2>
+
+    <p class="info">This calculator can be used to compute cutoff frequency of Betaflight 3.3 RC1 Kalman filter (which is BiQuad+FIR2 not Fast Kalman but this is a minor detail).</p>
+    <p class="info">Since the filter is looptime dependant, you have to provide Q and R coefficients as well as gyroscope sampling frequency. As a result you
+        will get computed cutoff frequency. Play with Q and R values to get cut off slightly below motor noise frequency of your drone.
+    </p>
+    <p class="info">Brought to you by <a href="https://quadmeup.com/">QuadMeUp.com</a> and <a href="https://www.youtube.com/user/dzikuvx/">Paweł Spychalski YouTube channel</a></p>
+    <div id="cutoffCalculator">
+        <div class="section">
+            <label class="section__label" for="gyro_filter_q">gyro_filter_q</label>
+            <input class="section__input compute-on-change" type="number" id="gyro_filter_q" value="300" />
+        </div>
+        <div class="section">
+            <label class="section__label" for="gyro_filter_r">gyro_filter_r</label>
+            <input class="section__input compute-on-change" type="number" id="gyro_filter_r" value="80" />
+        </div>
+
+        <div class="section">
+            <label class="section__label" for="gyro_frequency">Gyro sampling frequency</label>
+            <input class="section__input compute-on-change" type="number" id="gyro_frequency" value="8000" />
+        </div>
+
+        <div class="section section--output">
+            <span class="section__label">Computer filter cutoff frequency: </span>
+            <span id="output" class="section__computed-value"></span>
+            <span>Hz</span>
+        </div>
+
+    </div>
+
+<p class="footer">Based on spreadsheet available on <a href="https://www.rcgroups.com/forums/showthread.php?3009636-BF-K-Testing-the-Fast-Kalman-filter-on-Betaflight">RCGroups</a></p>
+
+    <script src="scripts.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-7536599-25"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-7536599-25');
+</script>
+
+</body>
+</html>

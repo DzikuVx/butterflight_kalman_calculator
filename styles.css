@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+
+.section:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+h1, h2 {
+    text-shadow: 1px 1px 2px #a0a0a0;
+}
+
+.section__label {
+    display: inline-block;
+    width: 20em;
+}
+
+.section__input {
+    font-size: 1.2em;
+}
+
+.section__computed-value {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.footer {
+    font-size: 0.7em;
+    margin-top: 2em;
+}
+
+.info {
+    font-size: 0.8em;
+}
